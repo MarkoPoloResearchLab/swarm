@@ -4,9 +4,11 @@ require 'core_ext/symbol/responsive'
 using CoreExtensions::Responsive
 
 describe CoreExtensions::Responsive do
-  let(:nested_hash) { { c: { d: 1, e: 5 }, f: { d: 1, e: 5 }, g: { h: { d: 1, e: 5 } } } }
+  let(:hash) { { d: 1, e: 5 } }
 
   describe '#~' do
-    it 'tests ~ method'
+    it 'returns true if a method is present' do
+      expect(~:fetch === hash).to be_truthy
+    end
   end
 end
